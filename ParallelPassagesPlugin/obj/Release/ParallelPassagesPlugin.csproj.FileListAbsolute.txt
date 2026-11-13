@@ -1,0 +1,5 @@
+C:\ClaudeCode Projects\Parallel Passages\ParallelPassagesPlugin\bin\Release\ParallelPassagesEditorPlugin.dll
+C:\ClaudeCode Projects\Parallel Passages\ParallelPassagesPlugin\bin\Release\ParallelPassagesEditorPlugin.pdb
+C:\ClaudeCode Projects\Parallel Passages\ParallelPassagesPlugin\obj\Release\ParallelPassagesPlugin.csprojResolveAssemblyReference.cache
+C:\ClaudeCode Projects\Parallel Passages\ParallelPassagesPlugin\obj\Release\ParallelPassagesEditorPlugin.dll
+C:\ClaudeCode Projects\Parallel Passages\ParallelPassagesPlugin\obj\Release\ParallelPassagesEditorPlugin.pdb

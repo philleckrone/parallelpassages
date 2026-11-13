@@ -1,0 +1,79 @@
+{
+  "cues": "{1} before a phrase shows box 1 of the step from there on, {0,2} boxes 0 and 2, {} none; the pointer goes on the first box named. Cues are not spoken or shown. 'q' is the step's question in the YouTube timecodes (youtubetext.txt).",
+  "youtube": {
+    "en": {
+      "about": "Parallel Passages Editor is a Paratext tool that hides books, chapters or passages from Paratext's Parallel Passages tool, for example 1 and 2 Chronicles, so their many parallels with Samuel and Kings are not listed. It edits Paratext's own ParallelPassages.xml, keeps the original file, and saves your list so it can be put back after a Paratext update. Windows asks for administrator permission when it opens, because the file is in the Program Files folder. The changes apply to every project on the computer; restart Paratext after saving.",
+      "download": "Download Install_Phils_tools.exe from the Paratext Plugins folder, and tick Parallel Passages Editor in it:",
+      "link": "https://short.do/HgUb7T",
+      "credits": [
+        "Created with Claude AI.",
+        "Narration: AI-generated voice (Microsoft Azure AI Speech, voice \"Jenny\").",
+        "Music from Free To Use",
+        "Source: https://freetouse.com/music",
+        "Coconut Kind of Love by Aetheric"
+      ]
+    }
+  },
+  "steps": [
+    {
+      "id": "title",
+      "en": { "title": "Parallel Passages Editor", "sub": "A Paratext tool: hide books or chapters from the Parallel Passages tool", "text": "Parallel Passages Editor is a Paratext tool. It hides the books or chapters you don't want listed in Paratext's Parallel Passages tool." }
+    },
+    {
+      "id": "s00_menu",
+      "en": { "title": "Open it from the Tools menu", "q": "How do I open Parallel Passages Editor?", "text": "In Paratext, choose {0}Tools, then {1}Parallel Passages Editor. Windows asks for administrator permission, because Paratext keeps this file in the Program Files folder." }
+    },
+    {
+      "id": "s01_open",
+      "en": { "title": "Paratext's list of parallel passages", "q": "What does the editor show?", "text": "{0}The editor opens Paratext's own list of parallel passages. {1}It is shared by every project on this computer. {2}Books, chapters and the entries of what you select are listed side by side. {3}The status bar counts the hidden entries." }
+    },
+    {
+      "id": "s02_book",
+      "en": { "title": "Choose a book", "q": "How do I see a book's parallels?", "text": "{0}Click a book, here 1 Chronicles. {1}Its chapters are listed, {2}with each parallel passage and the verses it goes with." }
+    },
+    {
+      "id": "s03_hidebook",
+      "en": { "title": "Hide whole books", "q": "How do I hide a book?", "text": "{0}Chronicles has many parallels with Samuel and Kings. To hide both books, select them, {1}and click Hide book. You can also tick a book's box. {2}The count of hidden entries goes up." }
+    },
+    {
+      "id": "s04_passage",
+      "en": { "title": "Passages hidden with them", "q": "What happens to the other verses of a passage?", "text": "{0}In 2 Samuel, some passages had only one other verse, in Chronicles. {1}A passage needs at least two visible verses, so these are hidden too, and the note says why. {2}The status bar counts them." }
+    },
+    {
+      "id": "s05_chapter",
+      "en": { "title": "Hide a chapter", "q": "Can I hide only a chapter?", "text": "{0}Chapters work the same way. Select one or more, here Psalm 18, which is also 2 Samuel 22, {1}and click Hide chapters, or tick a chapter's box. {2}Its entries are now hidden." }
+    },
+    {
+      "id": "s06_project",
+      "en": { "title": "A list for this project", "q": "Can a project keep its own list?", "text": "{0}Tick this box to keep the list with this project too. When you later open the editor from the project, it offers to use that list again." }
+    },
+    {
+      "id": "s07_save",
+      "en": { "title": "Save", "q": "How do I save the changes?", "text": "{0}Choose File, then Save." }
+    },
+    {
+      "id": "s08_saved",
+      "en": { "title": "Saved", "q": "Is the original file kept?", "text": "{0}The first time you save, the original file is kept beside it, as ParallelPassages.xmlorg. {1}Restart Paratext for the changes to take effect." }
+    },
+    {
+      "id": "s09_update",
+      "en": { "title": "After a Paratext update", "q": "What happens after a Paratext update?", "text": "{0}A Paratext update can put the original file back. The editor remembers what you hid last time, and offers to hide it again. {1}Click Yes. File, Reapply saved hidden list does the same." }
+    },
+    {
+      "id": "s10_reapplied",
+      "en": { "title": "Hidden again", "q": "Is everything hidden again?", "text": "{0}The books and chapters are hidden again. {1}Save, and restart Paratext." }
+    },
+    {
+      "id": "sec_install",
+      "en": { "title": "Installing the tool", "q": "How do I install the tool?", "text": "Installing the tool." }
+    },
+    {
+      "id": "i5_ready",
+      "en": { "title": "Ready to use", "text": "Start Paratext again. {1,0}Parallel Passages Editor is now on the Tools menu." }
+    },
+    {
+      "id": "end",
+      "en": { "title": "Parallel Passages Editor", "sub": "Hide books or chapters  ·  The original file is kept  ·  Reapply after an update", "text": "Parallel Passages Editor hides the books and chapters you choose from Paratext's Parallel Passages tool, keeps the original file, and puts your list back after an update." }
+    }
+  ]
+}

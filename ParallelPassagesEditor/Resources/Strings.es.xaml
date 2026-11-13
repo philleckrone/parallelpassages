@@ -1,0 +1,113 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Menu -->
+    <sys:String x:Key="Menu_File">_Archivo</sys:String>
+    <sys:String x:Key="Menu_Open">_Abrir…</sys:String>
+    <sys:String x:Key="Menu_Save">_Guardar</sys:String>
+    <sys:String x:Key="Menu_SaveAs">Guardar _como…</sys:String>
+    <sys:String x:Key="Menu_Reapply">_Volver a aplicar la lista de ocultos guardada</sys:String>
+    <sys:String x:Key="Menu_Exit">_Salir</sys:String>
+
+    <!-- Toolbar / bars -->
+    <sys:String x:Key="Toolbar_Language">Idioma:</sys:String>
+    <sys:String x:Key="FileBar_Format">Archivo: {0}</sys:String>
+    <sys:String x:Key="FileBar_None">Ningún archivo abierto</sys:String>
+    <sys:String x:Key="Banner_RestartReminder">Reinicie Paratext después de guardar para que los cambios surtan efecto. Los cambios se aplican a todos los proyectos de esta computadora.</sys:String>
+
+    <!-- Panes -->
+    <sys:String x:Key="Header_Books">Libros (marque para ocultar)</sys:String>
+    <sys:String x:Key="Header_Chapters">Capítulos (marque para ocultar)</sys:String>
+    <sys:String x:Key="Header_Entries">Entradas del libro o capítulos seleccionados</sys:String>
+    <sys:String x:Key="Count_Format">{0} / {1} ocultas</sys:String>
+
+    <!-- Buttons -->
+    <sys:String x:Key="Btn_HideBook">Ocultar libro</sys:String>
+    <sys:String x:Key="Btn_UnhideBook">Mostrar libro</sys:String>
+    <sys:String x:Key="Btn_HideChapters">Ocultar capítulo(s)</sys:String>
+    <sys:String x:Key="Btn_UnhideChapters">Mostrar capítulo(s)</sys:String>
+    <sys:String x:Key="Btn_UnhideAll">Mostrar todo</sys:String>
+
+    <!-- Entry grid columns (used from code-behind) -->
+    <sys:String x:Key="Column_Hidden">Oculta</sys:String>
+    <sys:String x:Key="Column_Reference">Referencia</sys:String>
+    <sys:String x:Key="Column_ParallelWith">Paralela con</sys:String>
+    <sys:String x:Key="Column_Text">Texto</sys:String>
+
+    <!-- Status bar / app -->
+    <sys:String x:Key="App_Title">Editor de pasajes paralelos</sys:String>
+    <sys:String x:Key="Status_Unsaved">(sin guardar)</sys:String>
+    <sys:String x:Key="Status_Saved">Guardado.</sys:String>
+    <sys:String x:Key="Status_SummaryFormat">{0} de {1} entradas ocultas</sys:String>
+
+    <!-- Dialogs -->
+    <sys:String x:Key="Dlg_SaveErrorTitle">Error al guardar</sys:String>
+    <sys:String x:Key="Dlg_SaveErrorBody">No se pudo guardar el archivo:</sys:String>
+    <sys:String x:Key="Dlg_UnsavedTitle">Cambios sin guardar</sys:String>
+    <sys:String x:Key="Dlg_UnsavedBody">Hay cambios sin guardar. ¿Desea guardarlos antes de continuar?</sys:String>
+    <sys:String x:Key="Dlg_OpenTitle">Abrir ParallelPassages.xml</sys:String>
+    <sys:String x:Key="Dlg_SaveTitle">Guardar ParallelPassages.xml como</sys:String>
+    <sys:String x:Key="Dlg_OpenErrorTitle">Error al abrir</sys:String>
+    <sys:String x:Key="Dlg_OpenErrorBody">No se pudo abrir el archivo:</sys:String>
+    <sys:String x:Key="Dlg_NoVersesBody">No se encontraron entradas &lt;Verse&gt; en este archivo. ¿Es un archivo ParallelPassages.xml?</sys:String>
+    <sys:String x:Key="Dlg_NotFoundTitle">Archivo no encontrado</sys:String>
+    <sys:String x:Key="Dlg_NotFoundBody">No se encontró ParallelPassages.xml en la carpeta habitual de Paratext 9 (Program Files\Paratext 9\ParallelPassages). Búsquelo, por favor.</sys:String>
+    <sys:String x:Key="Dlg_AdminTitle">Se necesitan permisos de administrador</sys:String>
+    <sys:String x:Key="Dlg_AdminBody" xml:space="preserve">Windows no permitió guardar en:&#10;{0}&#10;&#10;Se necesitan permisos de administrador para modificar archivos en Program Files. ¿Reiniciar el editor como administrador? Sus cambios se conservarán.</sys:String>
+    <sys:String x:Key="Dlg_PendingTitle">Cambios conservados</sys:String>
+    <sys:String x:Key="Dlg_PendingAppliedBody">Sus cambios se conservaron. Pulse Guardar para escribirlos en el archivo.</sys:String>
+    <sys:String x:Key="Dlg_PendingStaleBody">El archivo cambió en el disco después de reiniciar el editor, por lo que no se pudieron conservar sus cambios anteriores. Vuelva a hacerlos, por favor.</sys:String>
+    <sys:String x:Key="Dlg_ReapplyTitle">Volver a aplicar la lista de ocultos</sys:String>
+    <sys:String x:Key="Dlg_ReapplyBody" xml:space="preserve">No hay entradas ocultas en este archivo. Es posible que Paratext lo haya reemplazado durante una actualización.&#10;&#10;¿Volver a aplicar su lista de ocultos anterior ({0} libros, {1} capítulos, {2} entradas sueltas)?</sys:String>
+    <sys:String x:Key="Dlg_ReapplyConfirmBody">¿Reemplazar las entradas ocultas actuales por su lista de ocultos guardada ({0} libros, {1} capítulos, {2} entradas sueltas)?</sys:String>
+    <sys:String x:Key="Dlg_ReapplyNone">Todavía no hay una lista de ocultos guardada. Se guarda una cada vez que guarda el archivo.</sys:String>
+    <sys:String x:Key="Dlg_InvalidXmlBody">El archivo modificado no sería XML válido, así que no se guardó nada.</sys:String>
+
+    <!-- Two-entry rule / numbered backups -->
+    <sys:String x:Key="Count_KeptFormat">{0} / {1} ocultas, {2} con el pasaje</sys:String>
+    <sys:String x:Key="Column_Note">Nota</sys:String>
+    <sys:String x:Key="Note_Kept">Oculta con su pasaje: quedarían menos de 2 entradas</sys:String>
+    <sys:String x:Key="Status_SummaryKeptFormat">{0} de {1} entradas ocultas; {3} pasajes ocultos por completo ({2} entradas solo por eso)</sys:String>
+    <sys:String x:Key="Status_SavedBackupFormat">Guardado. El archivo original se conservó como {0}.</sys:String>
+    <sys:String x:Key="Dlg_RepairTitle">Pasajes reparados</sys:String>
+    <sys:String x:Key="Dlg_RepairBody">{0} pasajes de este archivo tienen menos de 2 entradas visibles, lo que puede impedir que Paratext se cargue. Se ocultarán por completo al guardar.</sys:String>
+
+    <!-- Per-project saved list -->
+    <sys:String x:Key="ProjectBar_Format">Proyecto: {0}</sys:String>
+    <sys:String x:Key="Check_SaveForProject">Guardar esta lista de ocultos para el proyecto {0}</sys:String>
+    <sys:String x:Key="Dlg_ProjectListTitle">Lista guardada de este proyecto</sys:String>
+    <sys:String x:Key="Dlg_ProjectListBody" xml:space="preserve">El proyecto {0} tiene una lista de ocultos guardada ({1} libros, {2} capítulos, {3} entradas sueltas).&#10;&#10;¿Usarla? Recuerde guardar y luego reiniciar Paratext.</sys:String>
+    <sys:String x:Key="Status_SavedForProject">La lista del proyecto {0} se guarda al cerrar esta ventana.</sys:String>
+    <sys:String x:Key="Status_RemovedForProject">La lista guardada del proyecto {0} se elimina al cerrar esta ventana.</sys:String>
+
+    <!-- Passages added by the user -->
+    <sys:String x:Key="Menu_Readd">Volver a _agregar mis pasajes guardados</sys:String>
+    <sys:String x:Key="Btn_AddPassage">Agregar pasaje…</sys:String>
+    <sys:String x:Key="Btn_EditPassage">Editar pasaje…</sys:String>
+    <sys:String x:Key="Btn_RemovePassage">Quitar pasaje</sys:String>
+    <sys:String x:Key="Btn_OK">Aceptar</sys:String>
+    <sys:String x:Key="Btn_Cancel">Cancelar</sys:String>
+    <sys:String x:Key="Note_Added">Agregado por usted</sys:String>
+    <sys:String x:Key="Status_AddedFormat">{0} pasajes agregados por usted</sys:String>
+    <sys:String x:Key="Dlg_AddPassageTitle">Agregar un pasaje paralelo</sys:String>
+    <sys:String x:Key="Dlg_EditPassageTitle">Editar un pasaje paralelo</sys:String>
+    <sys:String x:Key="Dlg_AddPassageHelp" xml:space="preserve">Escriba las referencias del pasaje paralelo, una por línea (al menos 2), por ejemplo:&#10;GEN 2:24&#10;MAT 19:5&#10;MRK 10:7-8&#10;Use la versificación Original, como en la lista de Paratext. Paratext no tiene comparación palabra por palabra para los pasajes que usted agrega, así que sus palabras no se resaltan.</sys:String>
+    <sys:String x:Key="Dlg_AddPassageNoVrs">No se encontró Paratext 9 en Archivos de programa, así que solo se comprueba la forma de cada referencia, no si el versículo existe.</sys:String>
+    <sys:String x:Key="Dlg_RemovePassageTitle">Quitar pasaje</sys:String>
+    <sys:String x:Key="Dlg_RemovePassageBody">¿Quitar el pasaje {0}?</sys:String>
+    <sys:String x:Key="Dlg_ReaddTitle">Pasajes que usted agregó</sys:String>
+    <sys:String x:Key="Dlg_ReaddBody" xml:space="preserve">{0} pasajes que usted agregó antes no están en este archivo. Es posible que Paratext lo haya reemplazado durante una actualización.&#10;&#10;{1}&#10;&#10;¿Agregarlos de nuevo?</sys:String>
+    <sys:String x:Key="Dlg_ReaddNone">Todos los pasajes que usted agregó están en este archivo. La lista se guarda cada vez que guarda el archivo.</sys:String>
+    <sys:String x:Key="Dlg_PassageErrorTitle">Pasaje</sys:String>
+    <sys:String x:Key="Err_LineFormat">Referencia {0}: {1}</sys:String>
+    <sys:String x:Key="Err_BadRef">«{0}» no es una referencia como GEN 2:24, MRK 10:7-8 o 2CH 8:13,16.</sys:String>
+    <sys:String x:Key="Err_Book">{0} no es un libro del Antiguo ni del Nuevo Testamento.</sys:String>
+    <sys:String x:Key="Err_Order">«{0}»: los versículos deben estar en orden (10:7-8, 8:13,16).</sys:String>
+    <sys:String x:Key="Err_Chapter">{0} no existe: {1} tiene {2} capítulos en la versificación Original.</sys:String>
+    <sys:String x:Key="Err_Verse">«{0}» no existe: {1} tiene {2} versículos en la versificación Original.</sys:String>
+    <sys:String x:Key="Err_Duplicate">{0} ya es la referencia {1}.</sys:String>
+    <sys:String x:Key="Err_TooFew">Un pasaje necesita al menos 2 referencias.</sys:String>
+    <sys:String x:Key="Err_Exists">Este pasaje ya está en el archivo (línea {0}: {1}).</sys:String>
+
+</ResourceDictionary>

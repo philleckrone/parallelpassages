@@ -1,0 +1,23 @@
+﻿Parallel Passages Editor is a Paratext tool that hides books, chapters or passages from Paratext's Parallel Passages tool, for example 1 and 2 Chronicles, so their many parallels with Samuel and Kings are not listed. It edits Paratext's own ParallelPassages.xml, keeps the original file, and saves your list so it can be put back after a Paratext update. Windows asks for administrator permission when it opens, because the file is in the Program Files folder. The changes apply to every project on the computer; restart Paratext after saving.
+
+Download Install_Phils_tools.exe from the Paratext Plugins folder, and tick Parallel Passages Editor in it:
+https://short.do/HgUb7T
+
+0:17 How do I open Parallel Passages Editor?
+0:30 What does the editor show?
+0:48 How do I see a book's parallels?
+0:58 How do I hide a book?
+1:14 What happens to the other verses of a passage?
+1:30 Can I hide only a chapter?
+1:45 Can a project keep its own list?
+1:56 How do I save the changes?
+2:01 Is the original file kept?
+2:13 What happens after a Paratext update?
+2:29 Is everything hidden again?
+2:38 How do I install the tool?
+
+Created with Claude AI.
+Narration: AI-generated voice (Microsoft Azure AI Speech, voice "Jenny").
+Music from Free To Use
+Source: https://freetouse.com/music
+Coconut Kind of Love by Aetheric

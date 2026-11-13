@@ -1,0 +1,113 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Menu -->
+    <sys:String x:Key="Menu_File">_Fichier</sys:String>
+    <sys:String x:Key="Menu_Open">_Ouvrir…</sys:String>
+    <sys:String x:Key="Menu_Save">_Enregistrer</sys:String>
+    <sys:String x:Key="Menu_SaveAs">Enregistrer _sous…</sys:String>
+    <sys:String x:Key="Menu_Reapply">_Réappliquer la liste des masqués enregistrée</sys:String>
+    <sys:String x:Key="Menu_Exit">_Quitter</sys:String>
+
+    <!-- Toolbar / bars -->
+    <sys:String x:Key="Toolbar_Language">Langue :</sys:String>
+    <sys:String x:Key="FileBar_Format">Fichier : {0}</sys:String>
+    <sys:String x:Key="FileBar_None">Aucun fichier ouvert</sys:String>
+    <sys:String x:Key="Banner_RestartReminder">Redémarrez Paratext après l'enregistrement pour que les modifications prennent effet. Les modifications s'appliquent à tous les projets de cet ordinateur.</sys:String>
+
+    <!-- Panes -->
+    <sys:String x:Key="Header_Books">Livres (cocher pour masquer)</sys:String>
+    <sys:String x:Key="Header_Chapters">Chapitres (cocher pour masquer)</sys:String>
+    <sys:String x:Key="Header_Entries">Entrées du livre ou des chapitres sélectionnés</sys:String>
+    <sys:String x:Key="Count_Format">{0} / {1} masquées</sys:String>
+
+    <!-- Buttons -->
+    <sys:String x:Key="Btn_HideBook">Masquer le livre</sys:String>
+    <sys:String x:Key="Btn_UnhideBook">Afficher le livre</sys:String>
+    <sys:String x:Key="Btn_HideChapters">Masquer chapitre(s)</sys:String>
+    <sys:String x:Key="Btn_UnhideChapters">Afficher chapitre(s)</sys:String>
+    <sys:String x:Key="Btn_UnhideAll">Tout afficher</sys:String>
+
+    <!-- Entry grid columns (used from code-behind) -->
+    <sys:String x:Key="Column_Hidden">Masquée</sys:String>
+    <sys:String x:Key="Column_Reference">Référence</sys:String>
+    <sys:String x:Key="Column_ParallelWith">Parallèle avec</sys:String>
+    <sys:String x:Key="Column_Text">Texte</sys:String>
+
+    <!-- Status bar / app -->
+    <sys:String x:Key="App_Title">Éditeur de passages parallèles</sys:String>
+    <sys:String x:Key="Status_Unsaved">(non enregistré)</sys:String>
+    <sys:String x:Key="Status_Saved">Enregistré.</sys:String>
+    <sys:String x:Key="Status_SummaryFormat">{0} entrées masquées sur {1}</sys:String>
+
+    <!-- Dialogs -->
+    <sys:String x:Key="Dlg_SaveErrorTitle">Erreur d'enregistrement</sys:String>
+    <sys:String x:Key="Dlg_SaveErrorBody">Impossible d'enregistrer le fichier :</sys:String>
+    <sys:String x:Key="Dlg_UnsavedTitle">Modifications non enregistrées</sys:String>
+    <sys:String x:Key="Dlg_UnsavedBody">Certaines modifications ne sont pas enregistrées. Enregistrer avant de continuer ?</sys:String>
+    <sys:String x:Key="Dlg_OpenTitle">Ouvrir ParallelPassages.xml</sys:String>
+    <sys:String x:Key="Dlg_SaveTitle">Enregistrer ParallelPassages.xml sous</sys:String>
+    <sys:String x:Key="Dlg_OpenErrorTitle">Erreur d'ouverture</sys:String>
+    <sys:String x:Key="Dlg_OpenErrorBody">Impossible d'ouvrir le fichier :</sys:String>
+    <sys:String x:Key="Dlg_NoVersesBody">Aucune entrée &lt;Verse&gt; n'a été trouvée dans ce fichier. S'agit-il bien d'un fichier ParallelPassages.xml ?</sys:String>
+    <sys:String x:Key="Dlg_NotFoundTitle">Fichier introuvable</sys:String>
+    <sys:String x:Key="Dlg_NotFoundBody">ParallelPassages.xml est introuvable dans le dossier habituel de Paratext 9 (Program Files\Paratext 9\ParallelPassages). Veuillez le localiser.</sys:String>
+    <sys:String x:Key="Dlg_AdminTitle">Droits d'administrateur requis</sys:String>
+    <sys:String x:Key="Dlg_AdminBody" xml:space="preserve">Windows n'a pas permis d'enregistrer dans :&#10;{0}&#10;&#10;Des droits d'administrateur sont nécessaires pour modifier des fichiers dans Program Files. Redémarrer l'éditeur en tant qu'administrateur ? Vos modifications seront conservées.</sys:String>
+    <sys:String x:Key="Dlg_PendingTitle">Modifications conservées</sys:String>
+    <sys:String x:Key="Dlg_PendingAppliedBody">Vos modifications ont été conservées. Cliquez sur Enregistrer pour les écrire dans le fichier.</sys:String>
+    <sys:String x:Key="Dlg_PendingStaleBody">Le fichier a changé sur le disque après le redémarrage de l'éditeur ; vos modifications précédentes n'ont donc pas pu être conservées. Veuillez les refaire.</sys:String>
+    <sys:String x:Key="Dlg_ReapplyTitle">Réappliquer la liste des masqués</sys:String>
+    <sys:String x:Key="Dlg_ReapplyBody" xml:space="preserve">Aucune entrée n'est masquée dans ce fichier. Paratext l'a peut-être remplacé lors d'une mise à jour.&#10;&#10;Réappliquer votre liste des masqués précédente ({0} livres, {1} chapitres, {2} entrées isolées) ?</sys:String>
+    <sys:String x:Key="Dlg_ReapplyConfirmBody">Remplacer les entrées masquées actuelles par votre liste des masqués enregistrée ({0} livres, {1} chapitres, {2} entrées isolées) ?</sys:String>
+    <sys:String x:Key="Dlg_ReapplyNone">Aucune liste des masqués n'est encore enregistrée. Une liste est enregistrée chaque fois que vous enregistrez le fichier.</sys:String>
+    <sys:String x:Key="Dlg_InvalidXmlBody">Le fichier modifié ne serait pas du XML valide ; rien n'a donc été enregistré.</sys:String>
+
+    <!-- Two-entry rule / numbered backups -->
+    <sys:String x:Key="Count_KeptFormat">{0} / {1} masquées, {2} avec le passage</sys:String>
+    <sys:String x:Key="Column_Note">Remarque</sys:String>
+    <sys:String x:Key="Note_Kept">Masquée avec son passage : il resterait moins de 2 entrées</sys:String>
+    <sys:String x:Key="Status_SummaryKeptFormat">{0} entrées masquées sur {1} ; {3} passages entièrement masqués ({2} entrées uniquement pour cette raison)</sys:String>
+    <sys:String x:Key="Status_SavedBackupFormat">Enregistré. Le fichier d'origine a été conservé sous le nom {0}.</sys:String>
+    <sys:String x:Key="Dlg_RepairTitle">Passages réparés</sys:String>
+    <sys:String x:Key="Dlg_RepairBody">{0} passages de ce fichier ont moins de 2 entrées visibles, ce qui peut empêcher Paratext de démarrer. Ils seront entièrement masqués à l'enregistrement.</sys:String>
+
+    <!-- Per-project saved list -->
+    <sys:String x:Key="ProjectBar_Format">Projet : {0}</sys:String>
+    <sys:String x:Key="Check_SaveForProject">Enregistrer cette liste des masqués pour le projet {0}</sys:String>
+    <sys:String x:Key="Dlg_ProjectListTitle">Liste enregistrée pour ce projet</sys:String>
+    <sys:String x:Key="Dlg_ProjectListBody" xml:space="preserve">Le projet {0} a une liste des masqués enregistrée ({1} livres, {2} chapitres, {3} entrées isolées).&#10;&#10;L'utiliser ? N'oubliez pas d'enregistrer, puis de redémarrer Paratext.</sys:String>
+    <sys:String x:Key="Status_SavedForProject">La liste du projet {0} est enregistrée à la fermeture de cette fenêtre.</sys:String>
+    <sys:String x:Key="Status_RemovedForProject">La liste enregistrée du projet {0} est supprimée à la fermeture de cette fenêtre.</sys:String>
+
+    <!-- Passages added by the user -->
+    <sys:String x:Key="Menu_Readd">Rajouter mes passages _enregistrés</sys:String>
+    <sys:String x:Key="Btn_AddPassage">Ajouter un passage…</sys:String>
+    <sys:String x:Key="Btn_EditPassage">Modifier le passage…</sys:String>
+    <sys:String x:Key="Btn_RemovePassage">Supprimer le passage</sys:String>
+    <sys:String x:Key="Btn_OK">OK</sys:String>
+    <sys:String x:Key="Btn_Cancel">Annuler</sys:String>
+    <sys:String x:Key="Note_Added">Ajouté par vous</sys:String>
+    <sys:String x:Key="Status_AddedFormat">{0} passages ajoutés par vous</sys:String>
+    <sys:String x:Key="Dlg_AddPassageTitle">Ajouter un passage parallèle</sys:String>
+    <sys:String x:Key="Dlg_EditPassageTitle">Modifier un passage parallèle</sys:String>
+    <sys:String x:Key="Dlg_AddPassageHelp" xml:space="preserve">Tapez les références du passage parallèle, une par ligne (au moins 2), par exemple :&#10;GEN 2:24&#10;MAT 19:5&#10;MRK 10:7-8&#10;Utilisez la versification Original, comme dans la liste de Paratext. Paratext n'a pas de comparaison mot à mot pour les passages que vous ajoutez, donc leurs mots ne sont pas mis en évidence.</sys:String>
+    <sys:String x:Key="Dlg_AddPassageNoVrs">Paratext 9 est introuvable dans Program Files : seule la forme de chaque référence est vérifiée, pas l'existence du verset.</sys:String>
+    <sys:String x:Key="Dlg_RemovePassageTitle">Supprimer le passage</sys:String>
+    <sys:String x:Key="Dlg_RemovePassageBody">Supprimer le passage {0} ?</sys:String>
+    <sys:String x:Key="Dlg_ReaddTitle">Passages que vous avez ajoutés</sys:String>
+    <sys:String x:Key="Dlg_ReaddBody" xml:space="preserve">{0} passages que vous avez ajoutés auparavant ne sont pas dans ce fichier. Paratext l'a peut-être remplacé lors d'une mise à jour.&#10;&#10;{1}&#10;&#10;Les ajouter de nouveau ?</sys:String>
+    <sys:String x:Key="Dlg_ReaddNone">Tous les passages que vous avez ajoutés sont dans ce fichier. La liste est enregistrée chaque fois que vous enregistrez le fichier.</sys:String>
+    <sys:String x:Key="Dlg_PassageErrorTitle">Passage</sys:String>
+    <sys:String x:Key="Err_LineFormat">Référence {0} : {1}</sys:String>
+    <sys:String x:Key="Err_BadRef">« {0} » n'est pas une référence comme GEN 2:24, MRK 10:7-8 ou 2CH 8:13,16.</sys:String>
+    <sys:String x:Key="Err_Book">{0} n'est pas un livre de l'Ancien ou du Nouveau Testament.</sys:String>
+    <sys:String x:Key="Err_Order">« {0} » : les versets doivent être dans l'ordre (10:7-8, 8:13,16).</sys:String>
+    <sys:String x:Key="Err_Chapter">{0} n'existe pas : {1} a {2} chapitres dans la versification Original.</sys:String>
+    <sys:String x:Key="Err_Verse">« {0} » n'existe pas : {1} a {2} versets dans la versification Original.</sys:String>
+    <sys:String x:Key="Err_Duplicate">{0} est déjà la référence {1}.</sys:String>
+    <sys:String x:Key="Err_TooFew">Un passage doit avoir au moins 2 références.</sys:String>
+    <sys:String x:Key="Err_Exists">Ce passage est déjà dans le fichier (ligne {0} : {1}).</sys:String>
+
+</ResourceDictionary>

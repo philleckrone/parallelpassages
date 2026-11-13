@@ -1,0 +1,113 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Menu -->
+    <sys:String x:Key="Menu_File">文件(_F)</sys:String>
+    <sys:String x:Key="Menu_Open">打开(_O)…</sys:String>
+    <sys:String x:Key="Menu_Save">保存(_S)</sys:String>
+    <sys:String x:Key="Menu_SaveAs">另存为(_A)…</sys:String>
+    <sys:String x:Key="Menu_Reapply">重新应用已保存的隐藏列表(_R)</sys:String>
+    <sys:String x:Key="Menu_Exit">退出(_X)</sys:String>
+
+    <!-- Toolbar / bars -->
+    <sys:String x:Key="Toolbar_Language">语言：</sys:String>
+    <sys:String x:Key="FileBar_Format">文件：{0}</sys:String>
+    <sys:String x:Key="FileBar_None">未打开文件</sys:String>
+    <sys:String x:Key="Banner_RestartReminder">保存后请重新启动 Paratext 以使更改生效。更改适用于这台电脑上的所有项目。</sys:String>
+
+    <!-- Panes -->
+    <sys:String x:Key="Header_Books">书卷（勾选即隐藏）</sys:String>
+    <sys:String x:Key="Header_Chapters">章（勾选即隐藏）</sys:String>
+    <sys:String x:Key="Header_Entries">所选书卷或章中的条目</sys:String>
+    <sys:String x:Key="Count_Format">已隐藏 {0} / {1}</sys:String>
+
+    <!-- Buttons -->
+    <sys:String x:Key="Btn_HideBook">隐藏书卷</sys:String>
+    <sys:String x:Key="Btn_UnhideBook">取消隐藏书卷</sys:String>
+    <sys:String x:Key="Btn_HideChapters">隐藏章</sys:String>
+    <sys:String x:Key="Btn_UnhideChapters">取消隐藏章</sys:String>
+    <sys:String x:Key="Btn_UnhideAll">全部取消隐藏</sys:String>
+
+    <!-- Entry grid columns (used from code-behind) -->
+    <sys:String x:Key="Column_Hidden">已隐藏</sys:String>
+    <sys:String x:Key="Column_Reference">经文出处</sys:String>
+    <sys:String x:Key="Column_ParallelWith">平行经文</sys:String>
+    <sys:String x:Key="Column_Text">文本</sys:String>
+
+    <!-- Status bar / app -->
+    <sys:String x:Key="App_Title">平行经文编辑器</sys:String>
+    <sys:String x:Key="Status_Unsaved">（未保存）</sys:String>
+    <sys:String x:Key="Status_Saved">已保存。</sys:String>
+    <sys:String x:Key="Status_SummaryFormat">已隐藏 {0} / {1} 个条目</sys:String>
+
+    <!-- Dialogs -->
+    <sys:String x:Key="Dlg_SaveErrorTitle">保存错误</sys:String>
+    <sys:String x:Key="Dlg_SaveErrorBody">无法保存文件：</sys:String>
+    <sys:String x:Key="Dlg_UnsavedTitle">未保存的更改</sys:String>
+    <sys:String x:Key="Dlg_UnsavedBody">有未保存的更改。是否先保存再继续？</sys:String>
+    <sys:String x:Key="Dlg_OpenTitle">打开 ParallelPassages.xml</sys:String>
+    <sys:String x:Key="Dlg_SaveTitle">将 ParallelPassages.xml 另存为</sys:String>
+    <sys:String x:Key="Dlg_OpenErrorTitle">打开错误</sys:String>
+    <sys:String x:Key="Dlg_OpenErrorBody">无法打开文件：</sys:String>
+    <sys:String x:Key="Dlg_NoVersesBody">此文件中没有找到 &lt;Verse&gt; 条目。这是 ParallelPassages.xml 文件吗？</sys:String>
+    <sys:String x:Key="Dlg_NotFoundTitle">找不到文件</sys:String>
+    <sys:String x:Key="Dlg_NotFoundBody">在 Paratext 9 的常用文件夹（Program Files\Paratext 9\ParallelPassages）中找不到 ParallelPassages.xml。请手动查找该文件。</sys:String>
+    <sys:String x:Key="Dlg_AdminTitle">需要管理员权限</sys:String>
+    <sys:String x:Key="Dlg_AdminBody" xml:space="preserve">Windows 不允许保存到：&#10;{0}&#10;&#10;修改 Program Files 中的文件需要管理员权限。是否以管理员身份重新启动编辑器？您的更改将被保留。</sys:String>
+    <sys:String x:Key="Dlg_PendingTitle">更改已保留</sys:String>
+    <sys:String x:Key="Dlg_PendingAppliedBody">您的更改已保留。请点击"保存"将其写入文件。</sys:String>
+    <sys:String x:Key="Dlg_PendingStaleBody">编辑器重新启动后，磁盘上的文件已发生变化，因此无法保留您之前的更改。请重新进行这些更改。</sys:String>
+    <sys:String x:Key="Dlg_ReapplyTitle">重新应用隐藏列表</sys:String>
+    <sys:String x:Key="Dlg_ReapplyBody" xml:space="preserve">此文件中没有隐藏的条目。Paratext 可能在更新时替换了它。&#10;&#10;是否重新应用您之前的隐藏列表（{0} 卷书、{1} 章、{2} 个单独条目）？</sys:String>
+    <sys:String x:Key="Dlg_ReapplyConfirmBody">是否用已保存的隐藏列表（{0} 卷书、{1} 章、{2} 个单独条目）替换当前隐藏的条目？</sys:String>
+    <sys:String x:Key="Dlg_ReapplyNone">还没有已保存的隐藏列表。每次保存文件时都会保存一份。</sys:String>
+    <sys:String x:Key="Dlg_InvalidXmlBody">修改后的文件将不是有效的 XML，因此没有保存任何内容。</sys:String>
+
+    <!-- Two-entry rule / numbered backups -->
+    <sys:String x:Key="Count_KeptFormat">已隐藏 {0} / {1}，其中 {2} 个随段落隐藏</sys:String>
+    <sys:String x:Key="Column_Note">备注</sys:String>
+    <sys:String x:Key="Note_Kept">随所在段落一起隐藏：剩余条目将少于 2 个</sys:String>
+    <sys:String x:Key="Status_SummaryKeptFormat">已隐藏 {0} / {1} 个条目；{3} 个段落被整体隐藏（其中 {2} 个条目仅因此被隐藏）</sys:String>
+    <sys:String x:Key="Status_SavedBackupFormat">已保存。原始文件已保留为 {0}。</sys:String>
+    <sys:String x:Key="Dlg_RepairTitle">段落已修复</sys:String>
+    <sys:String x:Key="Dlg_RepairBody">此文件中有 {0} 个段落的可见条目少于 2 个，这可能导致 Paratext 无法加载。保存时这些段落将被整体隐藏。</sys:String>
+
+    <!-- Per-project saved list -->
+    <sys:String x:Key="ProjectBar_Format">项目：{0}</sys:String>
+    <sys:String x:Key="Check_SaveForProject">为项目 {0} 保存此隐藏列表</sys:String>
+    <sys:String x:Key="Dlg_ProjectListTitle">此项目已保存的列表</sys:String>
+    <sys:String x:Key="Dlg_ProjectListBody" xml:space="preserve">项目 {0} 有一个已保存的隐藏列表（{1} 卷书、{2} 章、{3} 个单独条目）。&#10;&#10;是否使用？请记得保存，然后重新启动 Paratext。</sys:String>
+    <sys:String x:Key="Status_SavedForProject">关闭此窗口时将为项目 {0} 保存列表。</sys:String>
+    <sys:String x:Key="Status_RemovedForProject">关闭此窗口时将删除项目 {0} 保存的列表。</sys:String>
+
+    <!-- Passages added by the user -->
+    <sys:String x:Key="Menu_Readd">重新添加我保存的经文(_B)</sys:String>
+    <sys:String x:Key="Btn_AddPassage">添加经文…</sys:String>
+    <sys:String x:Key="Btn_EditPassage">编辑经文…</sys:String>
+    <sys:String x:Key="Btn_RemovePassage">删除经文</sys:String>
+    <sys:String x:Key="Btn_OK">确定</sys:String>
+    <sys:String x:Key="Btn_Cancel">取消</sys:String>
+    <sys:String x:Key="Note_Added">由您添加</sys:String>
+    <sys:String x:Key="Status_AddedFormat">您添加了 {0} 段经文</sys:String>
+    <sys:String x:Key="Dlg_AddPassageTitle">添加平行经文</sys:String>
+    <sys:String x:Key="Dlg_EditPassageTitle">编辑平行经文</sys:String>
+    <sys:String x:Key="Dlg_AddPassageHelp" xml:space="preserve">输入平行经文的引用，每行一个（至少 2 个），例如：&#10;GEN 2:24&#10;MAT 19:5&#10;MRK 10:7-8&#10;请使用 Original 经文编排，与 Paratext 自己的列表相同。Paratext 对您添加的经文没有逐词比较，因此其字词不会突出显示。</sys:String>
+    <sys:String x:Key="Dlg_AddPassageNoVrs">在 Program Files 中找不到 Paratext 9，因此只检查每个引用的格式，不检查该节是否存在。</sys:String>
+    <sys:String x:Key="Dlg_RemovePassageTitle">删除经文</sys:String>
+    <sys:String x:Key="Dlg_RemovePassageBody">删除经文 {0}？</sys:String>
+    <sys:String x:Key="Dlg_ReaddTitle">您添加的经文</sys:String>
+    <sys:String x:Key="Dlg_ReaddBody" xml:space="preserve">您之前添加的 {0} 段经文不在此文件中。Paratext 可能在更新时替换了它。&#10;&#10;{1}&#10;&#10;是否重新添加？</sys:String>
+    <sys:String x:Key="Dlg_ReaddNone">您添加的所有经文都在此文件中。每次保存文件时都会保存该列表。</sys:String>
+    <sys:String x:Key="Dlg_PassageErrorTitle">经文</sys:String>
+    <sys:String x:Key="Err_LineFormat">引用 {0}：{1}</sys:String>
+    <sys:String x:Key="Err_BadRef">“{0}”不是像 GEN 2:24、MRK 10:7-8 或 2CH 8:13,16 这样的引用。</sys:String>
+    <sys:String x:Key="Err_Book">{0} 不是旧约或新约的书卷。</sys:String>
+    <sys:String x:Key="Err_Order">“{0}”：节数必须按顺序（10:7-8、8:13,16）。</sys:String>
+    <sys:String x:Key="Err_Chapter">{0} 不存在：在 Original 经文编排中 {1} 有 {2} 章。</sys:String>
+    <sys:String x:Key="Err_Verse">“{0}”不存在：在 Original 经文编排中 {1} 有 {2} 节。</sys:String>
+    <sys:String x:Key="Err_Duplicate">{0} 已是引用 {1}。</sys:String>
+    <sys:String x:Key="Err_TooFew">一段经文至少需要 2 个引用。</sys:String>
+    <sys:String x:Key="Err_Exists">此经文已在文件中（第 {0} 行：{1}）。</sys:String>
+
+</ResourceDictionary>
