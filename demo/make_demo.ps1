@@ -459,6 +459,48 @@ Start-Sleep -Milliseconds 600
 if ((StatusEl).Current.Name -eq $before) { throw 'the chapter was not hidden' }
 Step 's05_chapter' @(@($c18), @($hideCh), @($grid)) 1
 
+# A window of the editor by its title (a message box or the Add passage dialog), put over the middle
+# of the main window and kept on top while it is captured.
+function DialogTitled($like) {
+    $d = $null
+    for ($i = 0; $i -lt 20 -and -not $d; $i++) {
+        $byPid = New-Object Windows.Automation.PropertyCondition ($AE::ProcessIdProperty, $script:proc.Id)
+        $d = @($root.FindAll($Scope::Descendants, $byPid)) | Where-Object { $_.Current.ControlType -eq $CT::Window -and $_.Current.Name -like $like } | Select-Object -First 1
+        if (-not $d) { Start-Sleep -Milliseconds 500 }
+    }
+    if (-not $d) { return $null }
+    $wb = $script:win.Current.BoundingRectangle; $db = $d.Current.BoundingRectangle
+    [DmWin]::MoveTo([IntPtr]$d.Current.NativeWindowHandle, [int]($wb.X + ($wb.Width - $db.Width) / 2), [int]($wb.Y + ($wb.Height - $db.Height) / 2))
+    [DmWin]::TopMost([IntPtr]$d.Current.NativeWindowHandle)
+    Start-Sleep -Milliseconds 700
+    $d
+}
+
+# A passage of your own (1.3): JHN 3:16 and 1JN 4:9, which Paratext's list does not have.
+$addBtn = ById 'AddPassageBtn'
+Step 's05b_addbtn' @(, @($addBtn)) 0
+Invoke $addBtn
+$addDlg = DialogTitled ((T 'Add a Parallel Passage' 'Agregar un pasaje paralelo' "Ajouter un passage parall$([char]0xE8)le") + '*')
+if (-not $addDlg) { throw 'the Add passage dialog did not open' }
+$refsBox = ById 'RefsBox' $addDlg
+SetValue $refsBox "JHN 3:16`r`n1JN 4:9"
+Start-Sleep -Milliseconds 500
+$errText = (ById 'ErrorText' $addDlg).Current.Name
+if ($errText) { throw "the references were refused: $errText" }
+$okBtn = ById 'OkBtn' $addDlg
+$helpEl = @($addDlg.FindAll($Scope::Descendants, (New-Object Windows.Automation.PropertyCondition ($AE::ControlTypeProperty, $CT::Text)))) | Where-Object { $_.Current.Name -like '*GEN 2:24*' } | Select-Object -First 1
+Step 's05c_addrefs' @(@($helpEl), @($refsBox), @($okBtn)) 1
+$total0 = (StatusEl).Current.Name
+Invoke $okBtn
+Start-Sleep -Milliseconds 1200
+if (DialogTitled 'Add*') { throw 'the Add passage dialog is still open' }
+$addedNote = T 'Added by you' 'Agregado por usted' "Ajout$([char]0xE9) par vous"
+$addedRows = @(Rows $grid | Where-Object { $cs = Cells $_; $cs.Count -ge 5 -and $cs[4].Current.Name -eq $addedNote })
+"added passage: $($addedRows.Count) row(s) marked '$addedNote'; status: $((StatusEl).Current.Name)"
+if (-not $addedRows.Count) { throw 'the added passage is not listed' }
+$addedCells = @(); foreach ($r in $addedRows) { $addedCells += (Cells $r)[4] }
+Step 's05d_added' @(@($addedRows), $addedCells, @((ById 'EditPassageBtn'), (ById 'RemovePassageBtn'))) 0
+
 # The project's own list (the plugin passes the project).
 $projCheck = ById 'ProjectOptionCheck'
 Step 's06_project' @(, @($projCheck)) 0
@@ -485,6 +527,11 @@ Start-Sleep -Milliseconds 1200
 $hidden = @(Select-String -LiteralPath $xml -Pattern '^\s*<!--').Count
 "saved: $hidden commented lines; xmlorg: $(Test-Path -LiteralPath ($xml + 'org')); hidden.txt: $(Test-Path -LiteralPath (Join-Path $appData 'hidden.txt'))"
 if (-not $hidden -or -not (Test-Path -LiteralPath ($xml + 'org')) -or -not (Test-Path -LiteralPath (Join-Path $appData 'hidden.txt'))) { throw 'the save did not write what it should' }
+# The added passage: its block in the file, and its line in added.txt.
+$addedMark = @(Select-String -LiteralPath $xml -SimpleMatch -Pattern '<!-- Added by Parallel Passages Editor -->').Count
+$addedTxt = Join-Path $appData 'added.txt'
+"added passages in the file: $addedMark; added.txt: $(if (Test-Path -LiteralPath $addedTxt) { (Get-Content -LiteralPath $addedTxt) -join ' | ' } else { 'missing' })"
+if ($addedMark -ne 1 -or -not (Test-Path -LiteralPath $addedTxt) -or -not (Select-String -LiteralPath $addedTxt -SimpleMatch -Pattern 'JHN 3:16' -Quiet)) { throw 'the added passage was not saved' }
 Step 's08_saved' @(@(StatusEl), @($banner)) -1
 $script:win.GetCurrentPattern([Windows.Automation.WindowPattern]::Pattern).Close()
 $script:proc.WaitForExit(10000) | Out-Null
@@ -493,6 +540,17 @@ if (-not $script:proc.HasExited) { $script:proc.Kill(); $script:proc.WaitForExit
 # A Paratext update puts the stock file back: the editor offers the list saved last time.
 Copy-Item -LiteralPath $stock -Destination $xml -Force
 Launch
+# First the passages added earlier, which the update took out of the file.
+$readd = DialogTitled ((T 'Passages You Added' "Pasajes que usted agreg$([char]0xF3)" 'Passages que vous avez ajout') + '*')
+if (-not $readd) { throw 'the editor did not offer the added passage again' }
+$readdAll = @($readd.FindAll($Scope::Descendants, [Windows.Automation.Condition]::TrueCondition))
+$readdText = $readdAll | Where-Object { $_.Current.Name -like '*JHN 3:16*' } | Select-Object -First 1
+if (-not $readdText) { throw 'the offer does not name the added passage' }
+$readdYes = $readdAll | Where-Object { $_.Current.Name -match "^&?(Yes|S$([char]0xED)|Oui)$" } | Select-Object -First 1
+"re-add offer: $(($readdText.Current.Name -replace '\s+', ' '))"
+Step 's09_readd' @(@($readdText), @($readdYes)) 1
+[DmWin]::Click([IntPtr]$readdYes.Current.NativeWindowHandle)
+Start-Sleep -Milliseconds 1200
 $askTitle = T 'Reapply Hidden List' 'Volver a aplicar la lista' 'R'
 $ask = $null
 for ($i = 0; $i -lt 20 -and -not $ask; $i++) {
